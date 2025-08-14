@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temporizador de Intervalos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#222222">
+</head>
+<body>
+  <h1>⏱🏋️ Temporizador de Intervalos</h1>
+
+  <div class="config">
+    <label>Trabajo (seg): <input type="number" id="workTime" value="60"></label>
+    <label>Descanso (seg): <input type="number" id="restTime" value="120"></label>
+    <label>Repeticiones: <input type="number" id="rounds" value="5"></label>
+  </div>
+
+  <div class="timer">
+    <h2 id="mode">Listo</h2>
+    <p id="countdown">00:00</p>
+  </div>
+
+  <div class="controls">
+    <button id="startBtn">Iniciar</button>
+    <button id="pauseBtn">Pausar</button>
+    <button id="resetBtn">Reiniciar</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RutinaFlex</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🏋️ RutinaFlex</h1>
+    <button id="newRoutineBtn">+ Nueva Rutina</button>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <h2>Mis Rutinas</h2>
+      <div class="routine-list">
+        <div class="routine-card">
+          <h3>HIIT Express</h3>
+          <p>Duración: 25 min</p>
+          <div class="actions">
+            <button class="edit">Editar</button>
+            <button class="start">Iniciar</button>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+
+    <section id="editor" class="hidden">
+      <h2>Editor de Rutina</h2>
+      <input type="text" placeholder="Nombre de la rutina" class="routine-name" />
+      <div class="exercise-blocks">
+        <div class="exercise-block">
+          <input type="text" placeholder="Ejercicio" />
+          <input type="number" placeholder="Duración (seg)" />
+          <input type="number" placeholder="Repeticiones" />
+          <input type="number" placeholder="Descanso (seg)" />
+        </div>
+      </div>
+      <button id="addBlock">+ Añadir bloque</button>
+      <button id="saveRoutine">Guardar Rutina</button>
+    </section>
+
+    <section id="training" class="hidden">
+      <h2>Modo Entrenamiento</h2>
+      <div class="timer">
+        <h3>Jumping Jacks</h3>
+        <div class="countdown">00:30</div>
+        <p>Repeticiones restantes: 3</p>
+        <button>Pausar</button>
+        <button>Finalizar</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html--> 

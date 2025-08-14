@@ -1,0 +1,124 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #111;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+.config {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.config label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+input {
+  padding: 5px;
+  text-align: center;
+}
+
+.timer {
+  margin: 20px 0;
+}
+
+#countdown {
+  font-size: 48px;
+  margin: 0;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* :root {
+  --bg: #f4f4f7;
+  --primary: #6c63ff;
+  --accent: #ff6584;
+  --success: #4cd964;
+  --text: #333;
+  --card: #fff;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem;
+}
+
+.routine-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.routine-card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.exercise-block {
+  background: var(--card);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.timer {
+  background: var(--card);
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hidden {
+  display: none;
+}
+ */
