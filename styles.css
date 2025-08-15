@@ -1,124 +1,150 @@
-body {
-  font-family: sans-serif;
-  text-align: center;
-  background: #111;
-  color: white;
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.config {
+:root {
+  --azul-oscuro: #002150;
+  --azul-claro: #00409a;
+  --texto: #fff;
+  --cyan-hard: #00bcd4;
+  --rojo: #ff5252;
+  --rojo-hover: #d32f2f;
+}
+
+body {
+  background: linear-gradient(140deg, var(--azul-oscuro), var(--azul-claro));
+  min-height: 100dvh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
 }
 
-.config label {
+.container {
+  box-sizing: border-box;
+  max-width: calc(100dvw / 3);
+  margin: 1rem auto;
+  background-color: #fff1;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 10px 3px #0003; 
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  overflow: hidden;
+
+  @media (width <= 768px){
+    max-width: 100%;
+    margin: 2rem;
+  }
 }
 
-input {
-  padding: 5px;
-  text-align: center;
-}
-
-.timer {
-  margin: 20px 0;
-}
-
-#countdown {
-  font-size: 48px;
-  margin: 0;
-}
-
-.controls button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* :root {
-  --bg: #f4f4f7;
-  --primary: #6c63ff;
-  --accent: #ff6584;
-  --success: #4cd964;
-  --text: #333;
-  --card: #fff;
-  --radius: 12px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-header {
+.header-container{
+  padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: var(--primary);
-  color: white;
+  justify-content: space-around;
+  color: var(--texto);
+  border-bottom: thin solid #fff2;
+  box-shadow: 0 0 5px 2px #fff3;
+
+  & > h1 {
+    text-wrap: balance;
+    text-align: center;
+  }
 }
 
-button {
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius);
-  cursor: pointer;
-  font-weight: bold;
-}
-
-main {
-  padding: 1rem;
-}
-
-.routine-list {
-  display: grid;
-  gap: 1rem;
-}
-
-.routine-card {
-  background: var(--card);
-  padding: 1rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.actions {
+.form{
+  margin-top: 2rem;
   display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--texto);
+
+  & > .config{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline: auto;
+    min-width: 80%;
+    gap: 1.5rem;
+
+    & > label {
+      display: flex;
+      flex-direction: column;
+
+      & > input {
+        width: 100%;
+      }
+    }
+  }
+
+  & > .timer{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > #mode {
+      font-size: 3rem;
+      opacity: 0.8;
+
+      @media ( width <= 768px){
+        font-size: 2rem;
+      }
+    }
+
+    & > #countdown {
+      font-size: 8rem;
+
+      @media ( width <= 768px){
+        font-size: 6rem;
+      }
+    }
+  }
 }
 
-.exercise-block {
-  background: var(--card);
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  display: grid;
-  gap: 0.5rem;
+.controls {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.timer {
-  background: var(--card);
-  padding: 2rem;
-  text-align: center;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+/* Utilidades */
+.btn {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+
+  & > img {
+    width: 1.5rem;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
-.hidden {
-  display: none;
+.btn-red {
+  background-color: var(--rojo);
 }
- */
+
+.btn-glass {
+  background-color: #fff2;
+}
+
+.btn-green {
+  background-color: rgb(2, 183, 2);
+}
+
+.btn-yellow {
+  background-color: rgb(236, 208, 50);
+}

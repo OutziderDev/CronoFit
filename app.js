@@ -1,7 +1,7 @@
 let workTime, restTime, rounds;
 let isWorking = true;
 let timer, remaining, currentRound = 1;
-const beep = new Audio("sounds/beep.mp3");
+const beep = new Audio("/assets/sounds/beep.mp3");
 
 const modeEl = document.getElementById("mode");
 const countdownEl = document.getElementById("countdown");
@@ -15,7 +15,8 @@ function startTimer() {
   restTime = parseInt(document.getElementById("restTime").value);
   rounds = parseInt(document.getElementById("rounds").value);
   remaining = isWorking ? workTime : restTime;
-
+  beep.play();
+  
   if (!timer) {
     updateDisplay();
     timer = setInterval(tick, 1000);
