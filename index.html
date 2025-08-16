@@ -9,28 +9,46 @@
  </head>
 <body>
   <section class="container">
+
     <header class="header-container">
-      <button class="btn btn-glass">
+      <button id="show-dialog" class="btn btn-glass">
         <img src="/assets/icons/menu.svg" alt="">
       </button>
-      <h1>🏋️ Temporizador de Intervalos</h1>
-      <button class="btn btn-red">
+      <h1>CronoFit - Intervalos</h1>
+      <!-- <button class="btn btn-red">
         <img src="/assets/icons/plus.svg" alt="">
-      </button>
+      </button> -->
     </header>
 
-    <div class="form">  
-      <div class="config">
-        <label><span>Trabajo (seg):</span> <input type="number" id="workTime" value="60"></label>
-        <label>Descanso (seg): <input type="number" id="restTime" value="120"></label>
-        <label>Repeticiones: <input type="number" id="rounds" value="5"></label>
+    <section class="timer-display">
+      <div class="clock">
+        <svg class=" " viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="transparent" class="drop-shadow-sm"></circle>
+          <circle cx="50" cy="50" r="45" stroke="#34d399" stroke-width="4" fill="transparent" stroke-dasharray="283" stroke-dashoffset="270" class="transition-all duration-1000 ease-in-out text-emerald-400 drop-shadow-lg" stroke-linecap="round"></circle>
+        </svg>
+        
+        <div class="timer">
+          <p id="countdown">00:00</p>
+          <h2 id="mode">Listo</h2>
+        </div>
       </div>
-      
-      <div class="timer">
-        <h2 id="mode">Listo</h2>
-        <p id="countdown">00:00</p>
+
+      <div class="legend">
+
       </div>
-    </div>
+
+      <dialog id="config-timer">
+        <div class="config">
+          <label><span>Trabajo (seg):</span> <input type="number" id="workTime" value="60"></label>
+          <label>Descanso (seg): <input type="number" id="restTime" value="120"></label>
+          <label>Repeticiones: <input type="number" id="rounds" value="5"></label>
+        </div>
+        <form>
+          <button formmethod="dialog">Ok!</button>
+        </form>
+      </dialog>
+
+    </section>
     
     <div class="controls">
       <button class="btn btn-green" id="startBtn">
@@ -46,6 +64,14 @@
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js");
     }
+  </script>
+  <script>
+    /* BOTON DIALOG */
+    const btnDialog = document.querySelector('#show-dialog');
+    btnDialog.addEventListener('click', () => {
+      const boxdialog = document.querySelector("#config-timer")
+      boxdialog.showModal();
+    })
   </script>
 </body>
 </html>
