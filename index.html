@@ -11,10 +11,10 @@
   <section class="container">
 
     <header class="header-container">
+      <h1>Crono Fitness </h1>
       <button id="show-dialog" class="btn btn-glass">
         <img src="/assets/icons/menu.svg" alt="">
       </button>
-      <h1>CronoFit - Intervalos</h1>
       <!-- <button class="btn btn-red">
         <img src="/assets/icons/plus.svg" alt="">
       </button> -->
@@ -24,17 +24,18 @@
       <div class="clock">
         <svg class=" " viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="transparent" class="drop-shadow-sm"></circle>
-          <circle cx="50" cy="50" r="45" stroke="#34d399" stroke-width="4" fill="transparent" stroke-dasharray="283" stroke-dashoffset="270" class="transition-all duration-1000 ease-in-out text-emerald-400 drop-shadow-lg" stroke-linecap="round"></circle>
+          <circle cx="50" cy="50" r="45" stroke="#34d399" stroke-width="4" fill="transparent" stroke-dasharray="283" stroke-dashoffset="5" class="transition-all duration-1000 ease-in-out text-emerald-400 drop-shadow-lg" stroke-linecap="round"></circle>
         </svg>
         
         <div class="timer">
           <p id="countdown">00:00</p>
-          <h2 id="mode">Listo</h2>
+          <h2 id="mode">descansando</h2>
         </div>
       </div>
 
-      <div class="legend">
-
+      <div class="rounds">
+        <p id="round">Ronda <span>1/5</span></p>
+        <p id="next-mode">Siguiente: <span >Descanso</span></p>
       </div>
 
       <dialog id="config-timer">
