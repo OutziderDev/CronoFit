@@ -1,12 +1,14 @@
 let workTime, restTime, rounds;
 let isWorking = true;
 let timer, remaining, currentRound = 1;
+const max = 283;
 const beep = new Audio("/assets/sounds/beep.mp3");
 
 const modeEl = document.getElementById("mode");
 const nextmode = document.querySelector('#n-mode');
 const numRound = document.querySelector('#n-round');
 const countdownEl = document.getElementById("countdown");
+const circuloAmutar = document.querySelector("#aumCirculo");
 
 document.getElementById("startBtn").addEventListener("click", startTimer);
 document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
@@ -16,6 +18,7 @@ function startTimer() {
   workTime = parseInt(document.getElementById("workTime").value);
   restTime = parseInt(document.getElementById("restTime").value);
   rounds = parseInt(document.getElementById("rounds").value);
+  circuloAmutar.setAttribute("stroke-dashoffset",max)
   remaining = isWorking ? workTime : restTime;
   beep.play();
   
@@ -40,6 +43,8 @@ function resetTimer() {
 
 function tick() {
   remaining--;
+  //Cargar la barra
+  updateBar();
 
   // Aviso previo de 5 segundos
   if (remaining === 5) {
@@ -62,6 +67,7 @@ function tick() {
         modeEl.style.color = 'var(--verdoso)';
         modeEl.textContent = "¡Completado!";
         nextmode.textContent = "¡Fin!"
+        circuloAmutar.setAttribute('stroke', `var(--verdoso)`)
         return;
       }
       remaining = workTime;
@@ -87,6 +93,16 @@ function updateDisplay() {
   const min = String(Math.floor(remaining / 60)).padStart(2, "0");
   const sec = String(remaining % 60).padStart(2, "0");
   countdownEl.textContent = `${min}:${sec}`;
+}
+
+function updateBar() {
+  const total = isWorking ? workTime : restTime;
+  const tiempoEnCurso = total - remaining;
+  const progreso = (tiempoEnCurso / total) * max;
+  const avanceFinal = max - progreso;
+  const barcolor= isWorking ? `var(--verdoso)` : `var(--amarillo)`;
+  circuloAmutar.setAttribute('stroke', barcolor);
+  circuloAmutar.setAttribute("stroke-dashoffset",avanceFinal)
 }
 
 
