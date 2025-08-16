@@ -13,8 +13,8 @@
 
     <header class="header-container">
       <h1>Crono Fitness </h1>
-      <button id="show-dialog" class="btn btn-glass">
-        <img src="/assets/icons/menu.svg" alt="">
+      <button id="show-dialog" class="">
+        <img src="/assets/icons/seting.svg" alt="">
       </button>
       <!-- <button class="btn btn-red">
         <img src="/assets/icons/plus.svg" alt="">
@@ -24,34 +24,34 @@
     <section class="timer-display">
       <div class="clock">
         <svg class=" " viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="transparent" class="drop-shadow-sm"></circle>
-          <circle cx="50" cy="50" r="45" stroke="#34d399" stroke-width="4" fill="transparent" stroke-dasharray="283" stroke-dashoffset="5" class="transition-all duration-1000 ease-in-out text-emerald-400 drop-shadow-lg" stroke-linecap="round"></circle>
+          <circle cx="50" cy="50" r="45" stroke="#fff3" stroke-width="3" fill="transparent" ></circle>
+          <circle cx="50" cy="50" r="45" stroke="#34d399" stroke-width="4" fill="transparent" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"></circle>
         </svg>
         
         <div class="timer">
-          <p id="countdown">00:00</p>
-          <h2 id="mode">descansando</h2>
+          <p id="countdown">02:00</p>
+          <h2 id="mode">trabajo</h2>
         </div>
       </div>
 
       <div class="rounds">
-        <p id="round">Ronda <span>1/5</span></p>
-        <p id="next-mode">Siguiente: <span >Descanso</span></p>
+        <p id="round">Ronda <span id="n-round">1/5</span></p>
+        <p id="next-mode">Siguiente: <span id="n-mode">Descanso</span></p>
       </div>
 
       <dialog id="config-timer"  >
         <div class="formulario">
           <div class="input-group">
             <label>Rondas</label>
-            <input type="number" id="rounds" value="5">
+            <input type="number" id="rounds" value="2">
           </div>
           <div class="input-group">
             <label>Tiempo de Trabajo <em>(seg)</em></label>
-            <input type="number" id="workTime" value="60">
+            <input type="number" id="workTime" value="8">
           </div>
           <div class="input-group">
             <label>Tiempo de Descanso <em>(seg)</em></label>
-            <input type="number" id="restTime" value="120">
+            <input type="number" id="restTime" value="3">
           </div>
           
         </div>
@@ -70,7 +70,7 @@
         <img src="/assets/icons/play.svg" alt="">
       </button>
       <button class="btn btn-red" id="pauseBtn"><img src="/assets/icons/pause.svg" alt=""></button>
-      <button class="btn btn-yellow" id="resetBtn"><img src="/assets/icons/reload.svg" alt=""></button>
+      <button class="btn btn-blue" id="resetBtn"><img src="/assets/icons/reload.svg" alt=""></button>
     </div>
   </section>
 
@@ -80,13 +80,6 @@
       navigator.serviceWorker.register("sw.js");
     }
   </script>
-  <script>
-    /* BOTON DIALOG */
-    const btnDialog = document.querySelector('#show-dialog');
-    btnDialog.addEventListener('click', () => {
-      const boxdialog = document.querySelector("#config-timer")
-      boxdialog.showModal();
-    })
-  </script>
+   
 </body>
 </html>

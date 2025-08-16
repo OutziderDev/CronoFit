@@ -48,7 +48,7 @@ body {
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: var(--texto);
   border-bottom: thin solid #fff2;
   box-shadow: 0 0 5px 2px #fff3;
@@ -56,6 +56,22 @@ body {
   & > h1 {
     text-wrap: balance;
     text-align: center;
+  }
+
+  & > button {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border: 1px solid #fff3;
+    box-shadow: 2px 2px 3px 2px #0002;
+    cursor: pointer;
+    background-color: #fff2;
+    transition:  transform 0.1s ease;
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }
 
@@ -196,14 +212,14 @@ body {
     opacity: 1;
     transform: scale(1.05);
   }
+
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 .btn-red {
   background-color: var(--rojo);
-}
-
-.btn-glass {
-  background-color: #fff2;
 }
 
 .btn-green {
@@ -215,7 +231,7 @@ body {
   }
 }
 
-.btn-yellow {
+.btn-blue {
   background-color: var(--azul-claro);
   opacity: 0.8;
 

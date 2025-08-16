@@ -4,6 +4,8 @@ let timer, remaining, currentRound = 1;
 const beep = new Audio("/assets/sounds/beep.mp3");
 
 const modeEl = document.getElementById("mode");
+const nextmode = document.querySelector('#n-mode');
+const numRound = document.querySelector('#n-round');
 const countdownEl = document.getElementById("countdown");
 
 document.getElementById("startBtn").addEventListener("click", startTimer);
@@ -57,7 +59,9 @@ function tick() {
       currentRound++;
       if (currentRound > rounds) {
         resetTimer();
+        modeEl.style.color = 'var(--verdoso)';
         modeEl.textContent = "¡Completado!";
+        nextmode.textContent = "¡Fin!"
         return;
       }
       remaining = workTime;
@@ -69,8 +73,26 @@ function tick() {
 }
 
 function updateDisplay() {
-  modeEl.textContent = isWorking ? `Trabajo (${currentRound}/${rounds})` : `Descanso (${currentRound}/${rounds})`;
+  /* modeEl.textContent = isWorking ? `Trabajo` : `Descanso`; */
+  if (isWorking) {
+    modeEl.style.color = 'var(--verdoso)';
+    modeEl.textContent = `Trabajo`;
+  }else {
+    modeEl.style.color = 'var(--amarillo)';
+    modeEl.textContent =`Descanso`;
+  }
+  nextmode.textContent = isWorking ? `Descanso` : `Trabajo`;
+  numRound.textContent =  `${currentRound}/${rounds}`;
+  
   const min = String(Math.floor(remaining / 60)).padStart(2, "0");
   const sec = String(remaining % 60).padStart(2, "0");
   countdownEl.textContent = `${min}:${sec}`;
 }
+
+
+/* BOTON DIALOG */
+const btnDialog = document.querySelector('#show-dialog');
+btnDialog.addEventListener('click', () => {
+  const boxdialog = document.querySelector("#config-timer")
+  boxdialog.showModal();
+})
