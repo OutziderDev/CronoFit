@@ -58,6 +58,7 @@ function tick() {
     if (isWorking) {
       isWorking = false;
       remaining = restTime;
+      circuloAmutar.setAttribute("stroke-dashoffset",max);
       modeEl.textContent = "Descanso";
     } else {
       isWorking = true;
