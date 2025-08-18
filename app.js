@@ -9,15 +9,25 @@ const nextmode = document.querySelector('#n-mode');
 const numRound = document.querySelector('#n-round');
 const countdownEl = document.getElementById("countdown");
 const circuloAmutar = document.querySelector("#aumCirculo");
+const boxdialog = document.querySelector("#config-timer");
 
 document.getElementById("startBtn").addEventListener("click", startTimer);
 document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
 document.getElementById("resetBtn").addEventListener("click", resetTimer);
 
+const btnSave = document.querySelector('#save-data').addEventListener('click', () => { 
+  resetTimer();
+  const min = String(Math.floor(parseInt(document.getElementById("workTime").value) / 60)).padStart(2, "0");
+  const sec = String(parseInt(document.getElementById("workTime").value) % 60).padStart(2, "0");
+  countdownEl.textContent = `${min}:${sec}`;
+  numRound.textContent = `${currentRound}/${parseInt(document.getElementById("rounds").value)}`;
+  boxdialog.close();
+})
+
 function startTimer() {
   workTime = parseInt(document.getElementById("workTime").value);
   restTime = parseInt(document.getElementById("restTime").value);
-  rounds = parseInt(document.getElementById("rounds").value);
+  rounds = parseInt(document.getElementById("rounds").value); 
   circuloAmutar.setAttribute("stroke-dashoffset",max)
   remaining = isWorking ? workTime : restTime;
   beep.play();
@@ -110,6 +120,5 @@ function updateBar() {
 /* BOTON DIALOG */
 const btnDialog = document.querySelector('#show-dialog');
 btnDialog.addEventListener('click', () => {
-  const boxdialog = document.querySelector("#config-timer")
   boxdialog.showModal();
 })
