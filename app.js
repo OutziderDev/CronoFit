@@ -1,6 +1,8 @@
 let workTime, restTime, rounds;
 let isWorking = true;
-let timer, remaining, currentRound = 1;
+let timer = null;
+let remaining = 0;
+let currentRound = 1;
 const max = 283;
 const beep = new Audio("/assets/sounds/beep.mp3");
 
@@ -17,7 +19,7 @@ document.getElementById("resetBtn").addEventListener("click", resetTimer);
 
 const btnSave = document.querySelector('#save-data').addEventListener('click', () => { 
   resetTimer();
-  const min = String(Math.floor(parseInt(document.getElementById("workTime").value) / 60)).padStart(2, "0");
+  const min = String(Math.floor(parseInt(document.getElementById("workTime").value) / 60));
   const sec = String(parseInt(document.getElementById("workTime").value) % 60).padStart(2, "0");
   countdownEl.textContent = `${min}:${sec}`;
   numRound.textContent = `${currentRound}/${parseInt(document.getElementById("rounds").value)}`;
@@ -25,13 +27,16 @@ const btnSave = document.querySelector('#save-data').addEventListener('click', (
 })
 
 function startTimer() {
+    
   workTime = parseInt(document.getElementById("workTime").value);
   restTime = parseInt(document.getElementById("restTime").value);
   rounds = parseInt(document.getElementById("rounds").value); 
-  circuloAmutar.setAttribute("stroke-dashoffset",max)
+  circuloAmutar.setAttribute("stroke-dashoffset", max);
   remaining = isWorking ? workTime : restTime;
   beep.play();
-  
+  if (timer === null && currentRound === 1 && remaining === 1) {
+  } 
+
   if (!timer) {
     updateDisplay();
     timer = setInterval(tick, 1000);
@@ -49,6 +54,7 @@ function resetTimer() {
   currentRound = 1;
   modeEl.textContent = "Listo";
   countdownEl.textContent = "00:00";
+  circuloAmutar.setAttribute("stroke-dashoffset",max);
 }
 
 function tick() {
@@ -57,7 +63,7 @@ function tick() {
   updateBar();
 
   // Aviso previo de 5 segundos
-  if (remaining === 5) {
+  if (remaining === 3 || remaining === 2 || remaining === 1) {
     beep.play();
     if (navigator.vibrate) navigator.vibrate(500);
   }
