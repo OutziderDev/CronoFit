@@ -154,6 +154,7 @@ body {
   #config-timer {
     background-color: #0007;
     width: 30%;
+    
     margin: auto;
     padding: 2rem;
     border-radius: 0.5rem;
@@ -198,19 +199,18 @@ body {
           outline: 2px solid var(--azul-claro);
         }
       }
-    }
 
-    & > .btn-form{
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin-top: 1rem;
+      & > .btn-form{
+        display: flex;
+         align-items: center;
+        justify-content: space-around;
+        margin-top: 1rem;
 
-      @media(width <= 768px){
-         
-        flex-direction: column;
-        gap: 0.8rem;
-      }
+        @media(width <= 768px){
+          margin-top: auto;
+          flex-direction: column;
+          gap: 0.8rem;
+        }
 
       & button {
         background-color: #fff4;
@@ -230,11 +230,14 @@ body {
         background-color: var(--azul-claro);
       }
     }
+    }
 
     @media ( width <= 768px) {
       margin: 0.5rem auto;
       width: 90%;
       height: auto;
+
+       
     }
   } 
 }
