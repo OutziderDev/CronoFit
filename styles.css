@@ -5,9 +5,9 @@
 }
 
 :root {
-  --azul: #312e81;
+  --azul: #191846;
   --azul-claro: #3b82f6;
-  --lila: #581c87;
+  --verdefondo: #04434e;
   --texto: #fff;
   --verdoso: #34d399;
   --rojo: #ff5252;
@@ -20,7 +20,7 @@ body {
   radial-gradient(ellipse 70% 60% at 20% 80%, rgba(12, 115, 170, 0.40), transparent 65%),
   radial-gradient(ellipse 60% 50% at 60% 65%, rgba(160, 120, 255, 0.28), transparent 62%),
   radial-gradient(ellipse 65% 40% at 50% 60%, rgba(80, 255, 220, 0.25), transparent 68%),
-  linear-gradient(140deg, var(--azul)  20%, var(--lila)  100%);
+  linear-gradient(140deg, var(--azul)  20%, var(--verdefondo)  100%);
   min-height: 100dvh;
   font-family: ui-sans-serif, system-ui, sans-serif;
   display: flex;
