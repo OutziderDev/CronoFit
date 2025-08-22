@@ -6,10 +6,10 @@ let currentRound = 1;
 const max = 283;
 const beep = new Audio("/assets/sounds/beep.mp3");
 
+const countdownEl = document.getElementById("countdown");
 const modeEl = document.getElementById("mode");
 const nextmode = document.querySelector('#n-mode');
 const numRound = document.querySelector('#n-round');
-const countdownEl = document.getElementById("countdown");
 const circuloAmutar = document.querySelector("#aumCirculo");
 const boxdialog = document.querySelector("#dialog-timer");
 
@@ -19,18 +19,18 @@ document.getElementById("resetBtn").addEventListener("click", resetTimer);
 
 const btnSave = document.querySelector('#save-data').addEventListener('click', () => { 
   resetTimer();
-  const min = String(Math.floor(parseInt(document.getElementById("workTime").value) / 60));
-  const sec = String(parseInt(document.getElementById("workTime").value) % 60).padStart(2, "0");
+  const min = String(Math.floor(parseInt(document.getElementById("inpWorkTime").value) / 60));
+  const sec = String(parseInt(document.getElementById("inpWorkTime").value) % 60).padStart(2, "0");
   countdownEl.textContent = `${min}:${sec}`;
-  numRound.textContent = `${currentRound}/${parseInt(document.getElementById("rounds").value)}`;
+  numRound.textContent = `${currentRound}/${parseInt(document.getElementById("iptRounds").value)}`;
   boxdialog.close();
 })
 
 function startTimer() {
     
-  workTime = parseInt(document.getElementById("workTime").value);
-  restTime = parseInt(document.getElementById("restTime").value);
-  rounds = parseInt(document.getElementById("rounds").value); 
+  workTime = parseInt(document.getElementById("inpWorkTime").value);
+  restTime = parseInt(document.getElementById("inpRestTime").value);
+  rounds = parseInt(document.getElementById("iptRounds").value); 
   circuloAmutar.setAttribute("stroke-dashoffset", max);
   remaining = isWorking ? workTime : restTime;
   beep.play();

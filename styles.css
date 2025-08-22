@@ -196,23 +196,22 @@ body {
         gap: 0.3rem;
       }
 
-      input[type="number"]{
+      input[type="number"] {
         border: 0;
         padding: 0.3rem;
-        border-radius: 0.3rem;
         text-align: center;
         width: 50%;
         background-color: transparent;
         color: var(--texto);
         border-bottom: 1px solid #fff5;
-
+        outline: none;
         
         &:focus{
-          outline: 2px solid var(--azul-claro);
+          border-bottom: 1px solid var(--azul-claro);
         }
       }
 
-      & > .btn-form{
+      & > .btn-form {
         display: flex;
          align-items: center;
         justify-content: space-around;
