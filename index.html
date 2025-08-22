@@ -17,7 +17,7 @@
 
     <header class="header-container">
       <h1>CronoFit</h1>
-      <button id="show-dialog" aria-label="Configuracion de Intervalos" >
+      <button id="show-dialog" aria-label="Configuracion de Intervalos"  onclick="document.querySelector('#dialog-timer').showModal();">
         <img src="/assets/icons/seting.svg" alt="">
       </button>
     </header>
@@ -31,7 +31,7 @@
         </svg>
         
         <div class="timer">
-          <p id="countdown">02:00</p>
+          <p id="countdown">01:00</p>
           <p id="mode">trabajo</p>
         </div>
       </div>
@@ -48,17 +48,17 @@
             <h2>Ajusta tus Intervalos</h2>
           </header>
           <div class="input-group">
-            <label>Rondas
+            <label>Repeticiones (Rondas)
             </label>
-            <input type="number" id="iptRounds" pattern="[0-9]*" value="7">
+            <input type="number" id="iptRounds" min="1" step="1" value="5">
           </div>
           <div class="input-group">
             <label>Tiempo de Trabajo <em>(seg)</em></label>
-            <input type="number" id="inpWorkTime" pattern="[0-9]*" value="60">
+            <input type="number" id="inpWorkTime" min="10" pattern="[0-9]*" value="60">
           </div>
           <div class="input-group">
             <label>Tiempo de Descanso <em>(seg)</em></label>
-            <input type="number" id="inpRestTime" pattern="[0-9]*" value="120">
+            <input type="number" id="inpRestTime" min="10" pattern="[0-9]*" value="120">
           </div>
           <div class="btn-form">
             <form>
@@ -74,7 +74,7 @@
     <section class="controls" aria-labelledby="controls-titulo">
       <h2 class="sr-only" id="controls-titulo">Controles del Temporizador</h2>
       <button class="btn btn-green" id="startBtn" aria-label="Iniciar">  <img src="/assets/icons/play.svg"   alt=""></button>
-      <button class="btn btn-red" id="pauseBtn" aria-label="Pausar">     <img src="/assets/icons/pause.svg"  alt=""></button>
+      <button class="btn btn-red hidden" id="pauseBtn" aria-label="Pausar">     <img src="/assets/icons/pause.svg"  alt=""></button>
       <button class="btn btn-blue" id="resetBtn" aria-label="Reiniciar"> <img src="/assets/icons/reload.svg" alt=""></button>
     </section>
   </section>
