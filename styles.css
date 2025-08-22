@@ -90,8 +90,8 @@ body {
       transform: rotate(-90deg);
     }
 
-    #aumCirculo {
-      transition: stroke-dashoffset 0.3s linear;
+    & #aumCirculo {
+      transition: stroke-dashoffset 0.2s linear;
     }
 
     & > .timer {
@@ -103,6 +103,7 @@ body {
     
       & > #mode {
         font-size: 1.2rem;
+        font-weight: bolder;
         color: var(--verdoso);
         text-transform: uppercase;
       }
@@ -137,7 +138,7 @@ body {
       font-size: 2.2rem;
 
       @media (width <= 768px){
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
     }
 
@@ -151,7 +152,7 @@ body {
     }
   }
 
-  #config-timer {
+  #dialog-timer {
     background-color: #0007;
     width: 30%;
     
@@ -297,4 +298,16 @@ body {
   &:hover{
     opacity: 1;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;  
+  border: 0;
 }

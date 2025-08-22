@@ -6,35 +6,33 @@
   <title>CronoFit - Temporizador</title>
   <link rel="stylesheet" href="/styles.css">
   <link rel="manifest" href="/favicon//manifest.json">
-  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="CronoFit"/>
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" >
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" >
+  <link rel="shortcut icon" href="/favicon/favicon.ico" >
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" >
+  <meta name="apple-mobile-web-app-title" content="CronoFit">
  </head>
 <body>
   <section class="container">
 
     <header class="header-container">
-      <h1>Crono Fitness </h1>
-      <button id="show-dialog" class="">
+      <h1>CronoFit</h1>
+      <button id="show-dialog" aria-label="Configuracion de Intervalos" >
         <img src="/assets/icons/seting.svg" alt="">
       </button>
-      <!-- <button class="btn btn-red">
-        <img src="/assets/icons/plus.svg" alt="">
-      </button> -->
     </header>
 
-    <section class="timer-display">
+    <section class="timer-display" aria-labelledby="timer-display-titulo">
+      <h2 id="timer-display-titulo" class="sr-only">Temporizador</h2>
       <div class="clock">
-        <svg class=" " viewBox="0 0 100 100">
+        <svg viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="45" stroke="#fff3" stroke-width="3" fill="transparent" ></circle>
           <circle id="aumCirculo" cx="50" cy="50" r="45" stroke="#34d399" stroke-width="4" fill="transparent" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"></circle>
         </svg>
         
         <div class="timer">
           <p id="countdown">02:00</p>
-          <h2 id="mode">trabajo</h2>
+          <p id="mode">trabajo</p>
         </div>
       </div>
 
@@ -43,7 +41,7 @@
         <p id="next-mode">Siguiente: <span id="n-mode">Descanso</span></p>
       </div>
 
-      <dialog id="config-timer">
+      <dialog id="dialog-timer">
         <div class="formulario">
           <h2>
             <img src="/assets/icons/seting.svg" alt="icon setting">
@@ -67,18 +65,16 @@
           </form>
           <button class="btn-azul " id="save-data"> Guardar</button>
         </div>
-                  
       </dialog>
 
     </section>
     
-    <div class="controls">
-      <button class="btn btn-green" id="startBtn">
-        <img src="/assets/icons/play.svg" alt="play button">
-      </button>
-      <button class="btn btn-red" id="pauseBtn"><img src="/assets/icons/pause.svg" alt=""></button>
-      <button class="btn btn-blue" id="resetBtn"><img src="/assets/icons/reload.svg" alt=""></button>
-    </div>
+    <section class="controls" aria-labelledby="controls-titulo">
+      <h2 class="sr-only" id="controls-titulo">Controles del Temporizador</h2>
+      <button class="btn btn-green" id="startBtn" aria-label="Iniciar">  <img src="/assets/icons/play.svg"   alt=""></button>
+      <button class="btn btn-red" id="pauseBtn" aria-label="Pausar">     <img src="/assets/icons/pause.svg"  alt=""></button>
+      <button class="btn btn-blue" id="resetBtn" aria-label="Reiniciar"> <img src="/assets/icons/reload.svg" alt=""></button>
+    </section>
   </section>
 
   <script src="app.js"></script>

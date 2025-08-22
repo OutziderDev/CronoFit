@@ -11,7 +11,7 @@ const nextmode = document.querySelector('#n-mode');
 const numRound = document.querySelector('#n-round');
 const countdownEl = document.getElementById("countdown");
 const circuloAmutar = document.querySelector("#aumCirculo");
-const boxdialog = document.querySelector("#config-timer");
+const boxdialog = document.querySelector("#dialog-timer");
 
 document.getElementById("startBtn").addEventListener("click", startTimer);
 document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
